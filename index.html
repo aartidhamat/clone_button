@@ -1,0 +1,77 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!--Used inline styles for the page here-->
+<style type="text/css">
+	.container {
+		border: 2px solid #000;
+		margin: 5px;
+		padding: 5px;
+	}
+	
+	.contentWrapper {
+		border: 2px solid #1874cd;
+		margin: 5px;
+		padding: 5px;
+	}
+		
+	.button{
+		border-radius: 2px;
+		color: #ffffff;
+		margin-top:20px;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 20px;
+		padding: 4px 10px;
+		text-decoration: none;
+	}
+	
+	#cloneContent {
+		background: #1874cd;
+		border: 1px solid #115290;
+		text-shadow: 0 -1px 0 #115290;
+	}
+	
+	#cloneButton {
+		background: #ff7f00;
+		border: 1px solid #bb5d00;
+		text-shadow: 0 -1px 0 #bb5d00;
+	}
+	
+	#reset {
+		background: #838b83;
+		border: 1px solid #626862;
+		text-shadow: 0 -1px 0 #626862;
+	}
+</style>
+ 
+</head>
+<body>
+    <div class="container">
+        <div class="contentWrapper">
+            <h3>Clone this box</h3>
+        </div>
+        <div class="buttonWrapper">
+            <button id="cloneContent" class="button" >cloneContent</button>
+            <button id="cloneButton" class="button" >cloneButton</button>
+            <button id="reset" class="button" >reset</button>
+        </div>
+    </div>
+     
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            $("#reset").click(function () {
+                location.reload();
+            });
+            $("#cloneContent").click(function () {
+                $('.contentWrapper').clone().insertAfter(".contentWrapper");
+            });
+            
+            $("#cloneButton").click(function () {
+                $('#cloneContent').clone(true).insertAfter("#cloneContent");
+            });
+        });
+    </script>
+</body>
+</html>
